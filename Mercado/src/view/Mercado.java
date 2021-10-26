@@ -24,10 +24,10 @@ public class Mercado {
 	private static void menu() {
 		System.out.println("=========================================");
 		System.out.println("=============== Bem-vindo(a) ============");
-		System.out.println("===============  Geek Shop  =============");
+		System.out.println("===============  Ruben Shop  =============");
 		System.out.println("=========================================");
 		
-		System.out.println("Selecione uma op√ß√£o abaixo: ");
+		System.out.println("Selecione uma opÁ„o abaixo: ");
 		System.out.println("1 - Cadastrar produto");
 		System.out.println("2 - Listar produtos");
 		System.out.println("3 - Comprar produto");
@@ -62,7 +62,7 @@ public class Mercado {
 			Utils.pausar(2);
 			System.exit(0);
 		default:
-			System.out.println("Op√ß√£o inv√°lida.");
+			System.out.println("OpÁ„o inv·lida.");
 			Utils.pausar(2);
 			Mercado.menu();
 			break;
@@ -77,7 +77,7 @@ public class Mercado {
 		System.out.println("Informe o nome do produto: ");
 		String nome = Mercado.teclado.nextLine();
 		
-		System.out.println("Informe o pre√ßo do produto: ");
+		System.out.println("Informe o preÁo do produto: ");
 		Double preco = Mercado.teclado.nextDouble();
 		
 		Produto produto = new Produto(nome, preco);
@@ -99,7 +99,7 @@ public class Mercado {
 				System.out.println();
 			}
 		}else {
-			System.out.println("Ainda n√£o existem produtos cadastrados.");
+			System.out.println("Ainda n„o existem produtos cadastrados.");
 		}
 		
 		Utils.pausar(2);
@@ -108,10 +108,10 @@ public class Mercado {
 	
 	private static void comprarProduto() {
 		if(Mercado.produtos.size() > 0) {
-			System.out.println("Informe o c√≥digo do produto que desejar comprar: ");
+			System.out.println("Informe o cÛdigo do produto que desejar comprar: ");
 			System.out.println();
 			
-			System.out.println("============== Produtos Dispon√≠veis =============");
+			System.out.println("============== Produtos DisponÌveis =============");
 			for(Produto p : Mercado.produtos) {
 				System.out.println(p);
 				System.out.println("------------------------");
@@ -137,7 +137,7 @@ public class Mercado {
 				}
 				if(tem) {
 					System.out.println("Deseja adicionar outros produtos ao carrinho? ");
-					System.out.println("Informe 1 para sim ou 0 para n√£o: ");
+					System.out.println("Informe 1 para sim ou 0 para n„o: ");
 					int op = Integer.parseInt(Mercado.teclado.nextLine());
 					
 					if(op == 1) {
@@ -148,12 +148,12 @@ public class Mercado {
 						Mercado.fecharPedido();
 					}
 				}else {
-					System.out.println("N√£o foi encontrado o produto com o c√≥digo " + codigo);
+					System.out.println("N„o foi encontrado o produto com o cÛdigo " + codigo);
 					Utils.pausar(2);
 					Mercado.menu();
 				}
 			}else {
-			System.out.println("Ainda n√£o existe produto cadastrado no mercado.");
+			System.out.println("Ainda n„o existe produto cadastrado no mercado.");
 			Utils.pausar(2);
 			Mercado.menu();
 		}
@@ -167,7 +167,7 @@ public class Mercado {
 				System.out.println("Produto: " + p + "\nQuantidade: " + Mercado.carrinho.get(p));
 			}
 		}else {
-			System.out.println("Ainda n√£o existem produtos no carrinho.");
+			System.out.println("Ainda n„o existem produtos no carrinho.");
 		}
 		
 		Utils.pausar(2);
@@ -185,9 +185,9 @@ public class Mercado {
 			System.out.println("Quantidade: " + quant);
 			System.out.println("----------------------");
 		}
-		System.out.println("Sua fatura √© " + Utils.doubleParaString(valorTotal));
+		System.out.println("Sua fatura È " + Utils.doubleParaString(valorTotal));
 		Mercado.carrinho.clear();
-		System.out.println("Obrigado pela prefer√™ncia.");
+		System.out.println("Obrigado pela preferÍncia.");
 		Utils.pausar(5);
 		Mercado.menu();
 	}

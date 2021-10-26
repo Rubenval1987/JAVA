@@ -32,9 +32,9 @@ public class Produto {
 	}
 	
 	public String toString() {
-		return "CÃ³digo: " + this.getCodigo() +
+		return "Código: " + this.getCodigo() +
 				"\nNome: " + this.getNome() + 
-				"\nPreÃ§o: " + Utils.doubleParaString(this.getPreco());
+				"\nPreço: " + Utils.doubleParaString(this.getPreco());
 	}
 
 }
